@@ -1,0 +1,6 @@
+id_aplicativo = 6025612515037653
+chave = JEeoXRkjW6nPaopDx58g5KIHnFEHGcp8
+
+link = https://auth.mercadolivre.com.br/authorization?response_type=code&client_id=6025612515037653&redirect_uri=https://hitrend.streamlit.app/
+
+TG = TG-66c62c42a6cf33000127bd39-1369454405
