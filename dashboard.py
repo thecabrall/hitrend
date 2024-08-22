@@ -76,7 +76,7 @@ if pesq == True:
 
 
 with a2:
-    unid = st.text_input('Quantidade')
+    unid = st.text_input('Novo Estoque')
     
     with a2:
         enviar_stock = st.button('Enviar Estoque')
