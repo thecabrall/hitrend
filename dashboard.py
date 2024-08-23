@@ -52,7 +52,11 @@ def ver_prod (txt): #---------------| VISUALIZADOR DE PRODUTO
             imagem = st.image(txt['pictures'][0]['url'])
             with c2:
                 titulo = st.write(txt['title'])
-                qualid = st.write(txt['condition'])
+                qualid = (txt['condition'])
+                if qualid == 'new':
+                    st.write('Estado: Novo')
+                elif qualid == 'used':
+                    st.write('Estado: Usado')
                 estoq = st.write(f'Estoque atual: {produto['initial_quantity']}')
                 for busca_sku in txt['attributes']:
                     if 'SELLER_SKU' in busca_sku['id']:
