@@ -40,11 +40,10 @@ key = refresh()
 
 with cont0: #---------- | BOTÃO DE GERAR TOKEN
     ref = st.button('Gerar Token')
-    with e1:
-        try:
-            ref == True
+    with e1: 
+        if ref == True:
             validade = st.write('Token válido por 6 horas')
-        except:
+        if ref == KeyError:
             st.warning('ID do produto está incorreto ou Vazio. Confira e faça novamente.')
     # st.text(key)
 
@@ -117,8 +116,11 @@ with e1: #---------------| PESQUISADOR DE ID
     response = requests.get(url)
     produto = response.json()
     pesq = st.button('Buscar')
-    if pesq == True:
-        ver_prod (produto)    
+    try:
+        if pesq == True:
+            ver_prod (produto)
+    except:
+        st.warning('ID do produto incorreto ou vazio. Corrija e tente novamente')
 
 with a1: #----------------| ESPAÇO PARA INSERIR NOVA QNT DE ESTOQUE
     unid = st.text_input('Novo Estoque')
