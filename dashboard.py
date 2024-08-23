@@ -43,6 +43,8 @@ with cont0: #---------- | BOTÃO DE GERAR TOKEN
     with e1: 
         if ref == True:
             validade = st.write('Token válido por 6 horas')
+        if ref == KeyError:
+            st.warning('ID do produto está incorreto ou Vazio. Confira e faça novamente.')
     # st.text(key)
 
 def ver_prod (txt): #---------------| VISUALIZADOR DE PRODUTO
