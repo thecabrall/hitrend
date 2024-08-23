@@ -54,12 +54,15 @@ def ver_prod (txt): #---------------| VISUALIZADOR DE PRODUTO
                 titulo = st.write(txt['title'])
                 qualid = st.write(txt['condition'])
                 estoq = st.write(f'Estoque atual: {produto['initial_quantity']}')
-                for atributo in txt['attributes']:
-                    if 'SELLER_SKU' in atributo['id']:
-                        nome_sku = atributo['value_name']
+                for busca_sku in txt['attributes']:
+                    if 'SELLER_SKU' in busca_sku['id']:
+                        nome_sku = busca_sku['value_name']
                         sku = st.write(f'SKU: {nome_sku}')
                 with c3:
-                    gtin = st.write(f'GTIN: {txt['attributes'][3]['value_name']}')
+                    for busca_gtin in txt['attributes']:
+                        if 'GTIN' in busca_gtin['id']:
+                            nome_sku = busca_gtin['value_name']
+                            sku = st.write(f'SKU: {nome_sku}')
                     preco = st.write(f'Preço: R$ {txt['price']:.2f}')
                     status_prod = st.write(f'Status: {txt['status']}')
                     with r1: #----------------| ESPAÇO PARA ATUALIZAR STATUS
