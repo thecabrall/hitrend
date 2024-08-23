@@ -68,7 +68,13 @@ def ver_prod (txt): #---------------| VISUALIZADOR DE PRODUTO
                             nome_gtin = busca_gtin['value_name']
                             gtin = st.write(f'GTIN: {nome_gtin}')
                     preco = st.write(f'Preço: R$ {txt['price']:.2f}')
-                    status_prod = st.write(f'Status: {txt['status']}')
+                    status_prod = (txt['status'])
+                    if status_prod == 'active':
+                        st.write('Status: Ativo')
+                    elif status_prod == 'used':
+                        st.write('Status: Desativado')
+                    elif status_prod == 'closed':
+                        st.write('Status: Fechado')
                     with r1: #----------------| ESPAÇO PARA ATUALIZAR STATUS
                         ative_status = st.button('Ativar')
                     with r2:
