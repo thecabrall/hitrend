@@ -10,12 +10,12 @@ d1,d2 = st.columns([1,4])
 a1,a2,a3,a4,a5,a6 = st.columns([2,2,1,1,1,1])
 b1,b2,b3 = st.columns(3)
 c1,c2,c3 = st.columns(3)
-cont3 = st.container()
+cont3 = st.container(border=True)
 r1,r2,r3,r4,r5,r6,r7,r8 = st.columns(8)
 
 
 def ver_prod (txt): #---------------| VISUALIZADOR DE PRODUTO
-    with c1:
+    with cont4:
             imagem = st.image(txt['pictures'][0]['url'])
             with c2:
                 titulo = st.write(txt['title'])

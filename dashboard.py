@@ -3,17 +3,19 @@ import requests
 import streamlit as st
 import json
 #------------| COLUNAS |-----------#
-cont0 = st.container()
+cont0 = st.container(border=True)
+cont01 = st.container(border=True)
 e1,e2 = st.columns(2)
-cont1 = st.container()
+cont1 = st.container(border=True)
 w1,w2 = st.columns(2)
 d1,d2 = st.columns([1,4])
 a1,a2,a3,a4,a5,a6 = st.columns([2,2,1,1,1,1])
 b1,b2,b3 = st.columns(3)
 cont2 = st.container()
 c1,c2,c3 = st.columns(3)
-cont3 = st.container()
+cont3 = st.container(border=True)
 r1,r2,r3,r4,r5,r6,r7,r8 = st.columns([2,2,2,6,1,1,1,1])
+cont4 = st.container(border=True)
 #------------| ACESSOS |-----------#
 
 refresh_token = 'TG-66c7559c2b3b8d0001c6601e-1369454405'
@@ -122,18 +124,19 @@ def ver_prod (txt): #---------------| VISUALIZADOR DE PRODUTO
                                 st.write('Encerrado!') 
     return ver_prod
 
-with e1: #---------------| PESQUISADOR DE ID
-    prod = st.text_input('ID Produto')
-    url_prod = 'https://api.mercadolibre.com/items/MLB'
-    url = f"{url_prod}{prod}"
-    response = requests.get(url)
-    produto = response.json()
-    pesq = st.button('Buscar')
-    try:
-        if pesq == True:
-            ver_prod (produto)
-    except:
-        st.warning('ID do produto incorreto ou vazio. Corrija e tente novamente')
+with cont01: #---------------| PESQUISADOR DE ID
+        prod = st.text_input('ID Produto')
+        url_prod = 'https://api.mercadolibre.com/items/MLB'
+        url = f"{url_prod}{prod}"
+        response = requests.get(url)
+        produto = response.json()
+        pesq = st.button('Buscar')
+        try:
+            if pesq == True:
+                with cont4:
+                    ver_prod (produto)
+        except:
+            st.warning('ID do produto incorreto ou vazio. Corrija e tente novamente')
 
 with a1: #----------------| ESPAÇO PARA INSERIR NOVA QNT DE ESTOQUE
     unid = st.text_input('Novo Estoque')
@@ -184,10 +187,8 @@ with cont1: #------------------| MUDAR NOME DO PRODUTO
     payload_dict = { 
         "title": ''
         }
-    with w1:
-        enviar_name = st.button('Atualizar',key='enviar_name')
-    with w2:
-        if enviar_name == True:
+    enviar_name = st.button('Atualizar',key='enviar_name')
+    if enviar_name == True:
             payload_dict['title'] = f'{nome}'
             payload = json.dumps(payload_dict)
             url_prod = 'https://api.mercadolibre.com/items/MLB'
