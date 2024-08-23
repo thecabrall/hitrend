@@ -40,10 +40,11 @@ key = refresh()
 
 with cont0: #---------- | BOTÃO DE GERAR TOKEN
     ref = st.button('Gerar Token')
-    with e1: 
-        if ref == True:
+    with e1:
+        try:
+            ref == True
             validade = st.write('Token válido por 6 horas')
-        if ref == KeyError:
+        except:
             st.warning('ID do produto está incorreto ou Vazio. Confira e faça novamente.')
     # st.text(key)
 
