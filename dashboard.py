@@ -61,7 +61,7 @@ def ver_prod (txt): #---------------| VISUALIZADOR DE PRODUTO
                 with c3:
                     for busca_gtin in txt['attributes']:
                         if 'GTIN' in busca_gtin['id']:
-                            nome_sku = busca_gtin['value_name']
+                            nome_gtin = busca_gtin['value_name']
                             sku = st.write(f'SKU: {nome_sku}')
                     preco = st.write(f'Preço: R$ {txt['price']:.2f}')
                     status_prod = st.write(f'Status: {txt['status']}')
