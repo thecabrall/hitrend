@@ -1,5 +1,5 @@
 id_aplicativo = 6025612515037653
-chave = JEeoXRkjW6nPaopDx58g5KIHnFEHGcp8
+chave = eK11Njeh5Qq4bV5ljtyXAxXQ6QKdQtTe
 
 link = https://auth.mercadolivre.com.br/authorization?response_type=code&client_id=6025612515037653&redirect_uri=https://hitracker.streamlit.app/
 
