@@ -18,15 +18,15 @@ r1,r2,r3,r4,r5,r6,r7,r8 = st.columns([2,2,2,6,1,1,1,1])
 cont4 = st.container(border=True)
 #------------| ACESSOS |-----------#
 
-refresh_token = 'TG-66c7559c2b3b8d0001c6601e-1369454405'
-conta_chave = 'JEeoXRkjW6nPaopDx58g5KIHnFEHGcp8'
+refresh_token = 'TG-66d859308a69be000146bf97-1369454405'
+conta_chave = 'eK11Njeh5Qq4bV5ljtyXAxXQ6QKdQtTe'
 app_id = '6025612515037653'
 #-------------------------------------------#
 
 def refresh (): #----------------| FUNÇÃO PARA GERAR NOVO TOKEN
     url = "https://api.mercadolibre.com/oauth/token"
 
-    payload = f'grant_type=refresh_token&client_id=6025612515037653&client_secret=JEeoXRkjW6nPaopDx58g5KIHnFEHGcp8&refresh_token={refresh_token}'
+    payload = f'grant_type=refresh_token&client_id=6025612515037653&client_secret=eK11Njeh5Qq4bV5ljtyXAxXQ6QKdQtTe&refresh_token={refresh_token}'
     headers = {
     'accept': 'application/json',
     'content-type': 'application/x-www-form-urlencoded'
