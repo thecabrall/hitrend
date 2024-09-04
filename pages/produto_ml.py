@@ -2,6 +2,12 @@ import requests
 import streamlit as st
 import json
 
+with st.sidebar:
+    st.page_link("dashboard.py", label="Início", icon="🔅")
+    st.page_link("pages/search.py", label="Procurar Item", icon="🔎",disabled=True)
+    st.page_link("pages/sandbox.py", label="Sandbox", icon="🛠️")
+
+
 # cont0 = st.container()
 e1,e2 = st.columns(2)
 cont1 = st.container()
